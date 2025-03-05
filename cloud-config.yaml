@@ -10,5 +10,5 @@ systemd:
 runcmd:
   - rm -rf /var/www/html/
   - git clone https://github.com/DevIDEVerdino/Prova_html.git /var/www/html/
-  - chmod -R 755 /var/www/html/
+  - chmod -R 644 /var/www/html/
   - nginx -s reload
