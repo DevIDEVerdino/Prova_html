@@ -1,0 +1,14 @@
+#cloud-config
+package_update: true
+packages:
+  - nginx
+  - git
+systemd:
+  units:
+    - name: nginx.service
+      enabled: true
+runcmd:
+  - rm -rf /var/www/html/
+  - git clone https://github.com/DevIDEVerdino/Prova_html.git /var/www/html/
+  - chmod -R 755 /var/www/html/
+  - nginx -s reload
